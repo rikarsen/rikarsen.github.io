@@ -174,7 +174,7 @@ module.exports = function (grunt) {
             },
             server: {
                 options: {
-                    map: true,
+                    map: true
                 },
                 files: [{
                     expand: true,
@@ -199,7 +199,7 @@ module.exports = function (grunt) {
                 src: [
                     '<%= config.dist %>/scripts/{,*}*.js',
                     '<%= config.dist %>/styles/{,*/}*.css',
-                    '<%= config.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+                    '<%= config.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
                 ]
             }
         },
