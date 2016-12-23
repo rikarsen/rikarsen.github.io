@@ -60,7 +60,7 @@
     "d3": "~3.5.5"
   },
   "appPath": "app",
-  "moduleName": "urbanApp",
+  "moduleName": "cocApp",
   "resolutions": {
     "fullcalendar": "~2.3.1",
     "d3": "~3.5.5",
