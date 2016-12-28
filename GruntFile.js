@@ -8,7 +8,6 @@ module.exports = function(grunt) {
 
     gtx.config(gruntConfig);
 
-    // We need our bower components in order to develop
     gtx.alias('default', [
         'recess:less',
         // 'clean:angular',
