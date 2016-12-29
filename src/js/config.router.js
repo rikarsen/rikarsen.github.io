@@ -1,52 +1,59 @@
 'use strict';
 
 angular.module('app')
-    .run(['$rootScope', 'Access', '$state', '$stateParams', function ($rootScope, Access, $state, $stateParams) {
+    .run(['$rootScope', 'AuthService', '$state', '$stateParams', function ($rootScope, AuthService, $state, $stateParams) {
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
 
-        $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
-            if (error == Access.UNAUTHORIZED) {
-                $state.go('access.signIn');
-            } else if (error == Access.FORBIDDEN) {
-                console.log('FORBIDDEN');
-            }
-        });
+        if(AuthService.isUserAuthenticated()) {
+            $rootScope.isUserAuthenticated = AuthService.isUserAuthenticated();
+        }
     }])
     .config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG', 'MODULE_CONFIG', function ($stateProvider, $urlRouterProvider, JQ_CONFIG, MODULE_CONFIG) {
-        $urlRouterProvider.otherwise('/access/signIn');
+        $urlRouterProvider.otherwise('/app/dashboard');
 
         $stateProvider
             .state('app', {
                 abstract: true,
                 url: '/app',
-                templateUrl: 'tpl/app.html'
+                templateUrl: 'tpl/app.html',
+                resolve: {
+                    loginRequired: loginRequired
+                }
             })
             .state('app.dashboard', {
                 url: '/dashboard',
-                templateUrl: 'tpl/dashboard.html',
-                resolve: {
-                    access: ['Access', function (Access) { return Access.isAuthenticated(); }]
-                }
+                templateUrl: 'tpl/dashboard.html'
             })
             .state('access', {
                 abstract: true,
                 url: '/access',
                 template: '<div ui-view class="fade-in-right-big smooth"></div>'
             })
-            .state('access.signIn', {
-                url: '/signIn',
-                templateUrl: 'tpl/signIn.html',
-                resolve: load(['js/controllers/signIn.js'], 'isAnonymous')
+            .state('access.login', {
+                url: '/login',
+                templateUrl: 'tpl/login.html',
+                resolve: load(['js/controllers/loginCtrl.js'])
+            })
+            .state('access.404', {
+                url: '/404',
+                templateUrl: 'tpl/404.html'
             });
 
-        function load(srcs, accessFn, callback) {
+        function loginRequired($q, AuthService) {
+            var deffered = $q.defer();
+
+            if(AuthService.isUserAuthenticated()) {
+                deffered.resolve();
+            } else {
+                $state.go('access.login');
+            }
+
+            return deffered.promise;
+        }
+
+        function load(srcs, callback) {
             return {
-                access: ['Access', function (Access) {
-                    if(accessFn == 'isAnonymous') {
-                        return Access.isAnonymous();
-                    }
-                }],
                 deps: ['$ocLazyLoad', '$q', function ($ocLazyLoad, $q) {
                     var deferred = $q.defer();
                     var promise  = false;

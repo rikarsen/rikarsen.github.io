@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('AppCtrl', ['$scope', '$window', function ($scope, $window) {
+    .controller('AppCtrl', ['$scope', '$window', '$state', '$http', function ($scope, $window, $state, $http) {
         var isIE = !!navigator.userAgent.match(/MSIE/i);
         if(isIE){ angular.element($window.document.body).addClass('ie');}
         if(isSmartDevice( $window ) ){ angular.element($window.document.body).addClass('smart')}
@@ -31,6 +31,12 @@ angular.module('app')
                 container: false
             }
         };
+
+
+        // $http.get('http://localhost:8888/rikarsen.github.io/src/api/users').success(function (data) {
+        //     console.log(data);
+        // });
+
 
         function isSmartDevice($window) {
             var ua = $window['navigator']['userAgent'] || $window['navigator']['vendor'] || $window['opera'];

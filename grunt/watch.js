@@ -6,14 +6,14 @@ module.exports = {
     html: {
         files: ['src/**/*.html', 'src/css/**/*.css'],
         options: {
-            livereload: true
+            livereload: 1337
         }
     },
     scripts: {
         files: ['src/js/**/*.js'],
         options: {
             spawn: false,
-            livereload: true
+            livereload: 1337
         }
     }
 };

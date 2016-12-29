@@ -1,5 +1,10 @@
 .idea/
+
 .DS_Store
+
 _temp/angulr/
+_temp/angular-crud-master/
+_temp/Angular-php-login-demo-master/
+
 node_modules/
 bower_components/
