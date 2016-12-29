@@ -12,4 +12,4 @@ module.exports = {
 		pushTo: 'origin',
 		gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d'
 	}
-}
+};

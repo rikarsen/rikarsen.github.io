@@ -8,8 +8,8 @@ module.exports = function(grunt) {
 
     gtx.config(gruntConfig);
 
-    gtx.alias('default', [
-        'recess:less',
+    gtx.alias('build', [
+        // 'recess:less',
         // 'clean:angular',
         // 'copy:libs',
         // 'copy:angular',
@@ -19,6 +19,12 @@ module.exports = function(grunt) {
         // 'uglify:generated',
         // 'usemin',
         // 'clean:tmp'
+    ]);
+
+    gtx.alias('default', [
+        'recess:less',
+        'connect:server',
+        'watch'
     ]);
 
     gtx.alias('release', ['bump-commit']);

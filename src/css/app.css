@@ -717,7 +717,7 @@ body {
   bottom: 0;
   z-index: 1000;
   width: 100%;
-  max-width: 200px;
+  max-width: 250px;
 }
 
 .app-aside-folded .app-aside-footer {
@@ -904,7 +904,7 @@ body {
 
 .navbar-brand img {
   display: inline;
-  max-height: 20px;
+  max-height: 30px;
   margin-top: -4px;
   vertical-align: middle;
 }
@@ -912,12 +912,12 @@ body {
 @media (min-width: 768px) {
   .app-aside,
   .navbar-header {
-    width: 200px;
+    width: 250px;
   }
   .navbar-collapse,
   .app-content,
   .app-footer {
-    margin-left: 200px;
+    margin-left: 250px;
   }
   .app-aside-right {
     position: absolute;
@@ -972,12 +972,12 @@ body {
     bottom: 0;
     left: 0;
     z-index: 1000;
-    width: 199px;
+    width: 249px;
     overflow: hidden;
   }
   .app-aside-fixed .aside-wrap .navi-wrap {
     position: relative;
-    width: 217px;
+    width: 267px;
     height: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -990,10 +990,10 @@ body {
     width: 17px;
   }
   .app-aside-fixed .aside-wrap .navi-wrap > * {
-    width: 200px;
+    width: 250px;
   }
   .smart .app-aside-fixed .aside-wrap .navi-wrap {
-    width: 200px;
+    width: 250px;
   }
   .app-aside-fixed.app-aside-folded .app-aside {
     position: fixed;
@@ -1148,7 +1148,7 @@ html.bg {
     right: auto;
     left: auto;
     width: 100%;
-    max-width: 550px;
+    max-width: 500px;
   }
   .app.container.app-aside-folded .app-footer-fixed {
     max-width: 690px;
@@ -1167,7 +1167,7 @@ html.bg {
     max-width: 970px;
   }
   .app.container .app-footer-fixed {
-    max-width: 770px;
+    max-width: 720px;
   }
   .app.container.app-aside-folded .app-footer-fixed {
     max-width: 910px;
@@ -1186,7 +1186,7 @@ html.bg {
     max-width: 1170px;
   }
   .app.container .app-footer-fixed {
-    max-width: 970px;
+    max-width: 920px;
   }
   .app.container.app-aside-folded .app-footer-fixed {
     max-width: 1110px;
@@ -1317,7 +1317,7 @@ html.bg {
     top: 0 !important;
     left: 100%;
     z-index: 1050;
-    width: 200px;
+    width: 250px;
     height: 0 !important;
     -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -1330,7 +1330,7 @@ html.bg {
     left: 80px;
     z-index: 1010;
     display: block;
-    width: 260px;
+    width: 310px;
     height: auto;
     overflow: visible;
     overflow-y: auto;
@@ -1521,7 +1521,7 @@ html.bg {
     left: 0;
     z-index: 1050;
     display: none;
-    width: 200px;
+    width: 250px;
     height: auto !important;
     -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);

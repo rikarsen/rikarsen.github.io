@@ -9,7 +9,8 @@ module.exports = {
             ]
         },
         options: {
-            compile: true
+            compile: true,
+            livereload: true
         }
     }
 };

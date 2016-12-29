@@ -1,6 +1,6 @@
 {
   "name": "rikarsen.github.io",
-  "version": "1.0.1-1",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -17,22 +17,23 @@
   },
   "homepage": "https://github.com/rikarsen/rikarsen.github.io#readme",
   "dependencies": {
-    "grunt-contrib-cssmin": "^0.14.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-usemin": "^3.1.1"
-  },
-  "devDependencies": {
+    "connect-livereload": "^0.6.0",
     "grunt": "^0.4.5",
     "grunt-bower-install-simple": "^0.9.3",
     "grunt-bump": "0.0.15",
     "grunt-changelog": "^0.2.2",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.14.0",
     "grunt-contrib-htmlmin": "^0.3.0",
     "grunt-contrib-uglify": "^0.5.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-http-server": "^2.0.0",
     "grunt-recess": "^1.0.0",
     "grunt-swig": "^0.2.1",
+    "grunt-usemin": "^3.1.1",
     "gruntfile-gtx": "^0.3.0",
     "http-server": "^0.6.1",
     "require-directory": "^2.0.0"
