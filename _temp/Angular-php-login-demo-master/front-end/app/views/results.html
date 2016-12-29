@@ -1,0 +1,28 @@
+
+<div class="container">
+    <div class="col-md-3 no-padding-left">
+        <p>&nbsp;</p>
+        <p class="font-text-bold">Categories</p>
+        <p><a href="#/trabajos">Jobs</a> </p>
+        <p class="text-muted" style="font-size:10px">More categories soon</p>           
+        <p class="border-bottom"></p>
+    </div>
+    <div class="col-md-9 container-data-list-parts">
+        <!-- generate the content -->
+        <h3><span id="ContentPlaceHolder1_label">Results</span> » </h3>
+        <table>
+            <tr ng-repeat="ads in searchResults">
+                <td>
+                    <!--#details/:category/:id-->
+                    <h3><a href="#/trabajos-details/{{ads.id}}/{{ads.ownerID}}">{{ads.title}}</a></h3>
+                    <p>{{ads.company}}</p>
+                    <p>
+                        {{ads.description}}
+                    </p>
+                    <p>{{ads.datePosted}}</p>
+                </td>
+            </tr>
+        </table>
+        <p class="border-bottom"></p>
+    </div>
+</div>
